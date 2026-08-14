@@ -6,7 +6,7 @@ def on_message(client, userdata, msg):
     print("Received:", data)
 
 
-client = mqtt.Client()
+client = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 client.connect("localhost", 1883)
 
 client.subscribe("temperature/sensor")
