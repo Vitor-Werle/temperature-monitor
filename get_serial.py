@@ -3,11 +3,12 @@ from datetime import datetime
 import re
 import serial
 
+
 ser = serial.Serial(port='/dev/ttyACM0', baudrate=9600)
 
 with open('data.csv', mode='w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
-    writer.writerow(['temperature', 'date'])
+    writer.writerow(['temperature', 'timestamp'])
     while True:
         value = ser.readline()
         valueInString = str(value, 'UTF-8')
