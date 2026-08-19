@@ -20,6 +20,7 @@ client.on_message = on_message_store
 print("Storing incoming data to MongoDB... Press Ctrl+C to stop.")
 try:
     client.loop_forever()
+    print("Stored")
 except KeyboardInterrupt:
     print("Stopped DB subscriber.")
     client.disconnect()
