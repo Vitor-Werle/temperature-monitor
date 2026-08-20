@@ -110,7 +110,7 @@ Make sure your local (or remote) MongoDB instance is running and accessible.
 ### 5. Run the Python script
 
 ```bash
-python main.py
+python publisher.py
 ```
 
 Adjust the serial port (e.g. `COM3` on Windows or `/dev/ttyUSB0` on Linux) and the MQTT/MongoDB connection settings inside the script as needed.
@@ -152,11 +152,16 @@ The dashboard displays:
 ```
 .
 ├── arduino/
-│   └── temperature_sensor.ino     # Arduino sketch
+│   └── monitor     
+      └── monitor.ino    # Arduino sketch
 ├── python/
-│   └── main.py                    # Reads serial data and publishes to MQTT/MongoDB
+│   └── mongoDB.py
+│   └── publisher.py     # Reads data and publish
+│   └── serial_reader.py
+│   └── subscriber.py    # Store data in mongoDB               
 ├── node-red/
-│   └── flow.json                  # Node-RED dashboard flow
+│   └── flows.json
+│   └── package.json                # Node-RED dashboard flow
 ├── images/
 │   ├── circuit-diagram.png
 │   ├── node-red-flow.png
@@ -174,7 +179,7 @@ The dashboard displays:
 
 ## Next Steps
 
-- Store and query historical data in MongoDB.
+- Use ESP32.
 - Expand the dashboard with alerts and additional metrics.
 - Add support for other sensors (humidity, light, etc.).
 
@@ -182,6 +187,3 @@ The dashboard displays:
 
 Contributions are welcome. Feel free to open an issue or submit a pull request.
 
-## License
-
-Define the project license here (e.g., MIT).
