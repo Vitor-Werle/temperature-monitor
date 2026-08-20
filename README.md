@@ -155,13 +155,13 @@ The dashboard displays:
 │   └── monitor     
       └── monitor.ino    # Arduino sketch
 ├── python/
-│   └── mongoDB.py
+│   └── mongoDB.py       # Store data in mongoDB
 │   └── publisher.py     # Reads data and publish
 │   └── serial_reader.py
-│   └── subscriber.py    # Store data in mongoDB               
+│   └── subscriber.py                   
 ├── node-red/
-│   └── flows.json
-│   └── package.json                # Node-RED dashboard flow
+│   └── flows.json       # Node-RED dashboard flow
+│   └── package.json                
 ├── images/
 │   ├── circuit-diagram.png
 │   ├── node-red-flow.png
