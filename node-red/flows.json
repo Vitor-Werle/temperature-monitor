@@ -1,0 +1,598 @@
+[
+    {
+        "id": "c33455d2d1d7fb28",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cfc3f365721d3225",
+        "type": "mqtt-broker",
+        "name": "TemperatureSensor",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "7d1ee2f684452d45",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "true",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 9,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "9c48db172cf1b9da",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "25e2a360ab41c05c",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "21c69cc4abaac5b8",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "242eb7a0c65dcb9f",
+        "type": "ui-page",
+        "name": "Page 1",
+        "ui": "25e2a360ab41c05c",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "21c69cc4abaac5b8",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": 0,
+                "cols": 3
+            },
+            {
+                "name": "Tablet",
+                "px": 576,
+                "cols": 6
+            },
+            {
+                "name": "Small Desktop",
+                "px": 768,
+                "cols": 9
+            },
+            {
+                "name": "Desktop",
+                "px": 1024,
+                "cols": 12
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": true,
+        "disabled": "false"
+    },
+    {
+        "id": "c861617cfdf193b0",
+        "type": "ui-group",
+        "name": "Group 1",
+        "page": "242eb7a0c65dcb9f",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": true,
+        "disabled": false,
+        "groupType": "default"
+    },
+    {
+        "id": "8e7178b2a1ae8ca5",
+        "type": "ui_group",
+        "name": "TEMPERATURE",
+        "tab": "9c48db172cf1b9da",
+        "order": 1,
+        "disp": true,
+        "width": 18,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7463f2a7c7161ca3",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 2,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "345679c2e8e552e4",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 4,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "bb58e5a52508f80b",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 5,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "c1fc2c977941b068",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 6,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "b7b86c701b0524fb",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 7,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "07a93b885da44dac",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 8,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "8070610a1b785f0d",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 9,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "3d9abf9d08ef20b7",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 10,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "6944780bbcfcb556",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 11,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "ab397d1388f84bb7",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 12,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "3a81ab758046e231",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 13,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "39a8693a24e85283",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 14,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "8a4c3112303f67da",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 15,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "96a77994508586ec",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 16,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "d4e8b26a4131a4ae",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 17,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "5b5270fec3a6a005",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 18,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "364d54e7e6e0be60",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 19,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "f62c8a8fc05d3c50",
+        "type": "ui_spacer",
+        "z": "c33455d2d1d7fb28",
+        "name": "spacer",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 20,
+        "width": 3,
+        "height": 1
+    },
+    {
+        "id": "2027fa034daff6ea",
+        "type": "mqtt in",
+        "z": "c33455d2d1d7fb28",
+        "name": "",
+        "topic": "temperature/sensor",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "cfc3f365721d3225",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "91babc6483531550",
+                "4ef1e8e4453e48d0"
+            ]
+        ]
+    },
+    {
+        "id": "91babc6483531550",
+        "type": "json",
+        "z": "c33455d2d1d7fb28",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 470,
+        "y": 220,
+        "wires": [
+            [
+                "514488e244ab9e90"
+            ]
+        ]
+    },
+    {
+        "id": "514488e244ab9e90",
+        "type": "change",
+        "z": "c33455d2d1d7fb28",
+        "name": "Change",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "msg.payload.temperature",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 220,
+        "wires": [
+            [
+                "0a4d4811f92a4da8",
+                "9a9c1dc3a823bff1",
+                "10817bbff113a442"
+            ]
+        ]
+    },
+    {
+        "id": "9a9c1dc3a823bff1",
+        "type": "ui_chart",
+        "z": "c33455d2d1d7fb28",
+        "name": "",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 1,
+        "width": 18,
+        "height": 7,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "10",
+        "ymax": "40",
+        "removeOlder": "1",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#e11414",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 930,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ef1e8e4453e48d0",
+        "type": "debug",
+        "z": "c33455d2d1d7fb28",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "0a4d4811f92a4da8",
+        "type": "debug",
+        "z": "c33455d2d1d7fb28",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "10817bbff113a442",
+        "type": "ui_gauge",
+        "z": "c33455d2d1d7fb28",
+        "name": "",
+        "group": "8e7178b2a1ae8ca5",
+        "order": 3,
+        "width": 11,
+        "height": 9,
+        "gtype": "wave",
+        "title": "Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": "10",
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 930,
+        "y": 320,
+        "wires": []
+    }
+]
